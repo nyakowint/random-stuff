@@ -1,0 +1,40 @@
+@import url("https://snare-hawk.github.io/snare-CSS/profile-panel-thingy.css");
+
+/* I wont be keeping this version up to date with my local one, this is just here for reference */ 
+
+[class*="lineClamp2Plus-"] { /* Show full about me i think */
+  -webkit-line-clamp: unset !important;
+  -line-clamp: unset !important;
+}
+
+[class^="channel-"] > div > [href="/store"], /* Nitro Button above DM List */
+[class^="channelTextArea"] [class^="buttons-"] > button, /* Hide Gift Button */
+[class^="upsellVisible-"], /* Hide Banner Nitro Upsell Header */
+[class^="premiumIconWrapper"], /* Hide Nitro Icon on Banners */
+[class^="characterCount-"] [class*="upsell-"], /* "Send longer Messages with Discord Nitro!" */
+[class^="emojiSection-"] [class*="shinyButton-"] /* "Get Nitro" button in Emoji/Sticker modal" */
+{
+    display: none !important;
+}
+
+[class^="menu-"], [class^="popout-"] { /* right click menu transparency */
+    opacity: 95%;
+}
+
+/* [class*="blockedSystemMessage-"]>div { Hide blocked messages
+  display: none;
+} */
+
+[class*="channel-"]>div[class*="muted-"] { /* Hide muted DMs and GCs*/
+  display: none;
+}
+
+[class^="threadSuggestionBar"] { /* Hide "start a thread" bullshit */
+  display: none;
+}
+
+[class*="rolePill-"] { /* remove ugly border on roles */
+  background-color: var(--profile-role-pill-background-color);
+  border: 0px solid;
+  border-color: var(--profile-role-pill-border-color);
+}
