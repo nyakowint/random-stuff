@@ -1,0 +1,61 @@
+/* ==UserStyle==
+@name          stat.ink Darkly Edit
+@description    Fixed skill issue with Darkly theme on stat.ink
+@version        1.0.0
+@namespace      DarklyEdit
+@author         Animal
+@updateURL      https://raw.githubusercontent.com/ItzOnlyAnimal/theme-stuff/main/statink_darkly_edit.css
+@preprocessor   stylus
+==/UserStyle== */
+@-moz-document url-prefix("https://stat.ink/") {
+    .simple-battle-data {
+        color: white;
+    }
+    
+    .simple-battle-result-won {
+        color: #82b8ff
+    }
+    
+    .text-link {
+        color: #82b8ff
+    }
+    
+    .simple-battle-map {
+        color: #0ce3ac;
+    }
+    
+    .panel-body {
+        background-color: #303030;
+    }
+
+    li.simple-battle-row {
+        background-color: #303030;
+    }
+    
+    .list-view {
+        display: grid;
+        border-radius: 10px;
+        column-gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .alert-warning {
+        color: #ffffff;
+        background-color: #9b2899;
+        border-color: #9b2899;
+    }
+
+    .root-1-2-17,
+    .root-1-2-7 {
+        background-color: #242424;
+    }
+
+    .content-1-2-26 {
+        background-color: #242424;
+        color: wheat;
+    }
+
+    .text-muted.small {
+        color: wheat
+    }
+}
