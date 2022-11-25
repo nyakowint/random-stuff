@@ -1,10 +1,10 @@
 /* ==UserStyle==
 @name          stat.ink Darkly Edit
 @description    Fixed skill issue with Darkly theme on stat.ink
-@version        1.0.0
+@version        1.1.0
 @namespace      DarklyEdit
 @author         Animal
-@updateURL      https://raw.githubusercontent.com/ItzOnlyAnimal/theme-stuff/main/statink_darkly_edit.user.css
+@updateURL      https://raw.githubusercontent.com/ItzOnlyAnimal/theme-stuff/main/statink_darkly_edit.css
 @preprocessor   stylus
 ==/UserStyle== */
 @-moz-document url-prefix("https://stat.ink/") {
@@ -13,11 +13,11 @@
     }
     
     .simple-battle-result-won {
-        color: #82b8ff
+        color: #82b8ff;
     }
     
     .text-link {
-        color: #82b8ff
+        color: #82b8ff;
     }
     
     .simple-battle-map {
@@ -56,6 +56,10 @@
     }
 
     .text-muted.small {
-        color: wheat
+        color: wheat;
+    }
+    
+    .ellipsis-1-2-17 {
+        white-space: pre-wrap;
     }
 }
