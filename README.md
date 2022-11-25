@@ -1,2 +1,1 @@
-# theme-stuff
-Random theme nonsense
+Personal random theme things ranging from discord to other places
