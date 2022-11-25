@@ -4,7 +4,7 @@
 @version        1.0.0
 @namespace      StatInkDarklyFix
 @author         Animal
-@updateURL      https://userstyles.world/api/style/529.user.css
+@updateURL      https://raw.githubusercontent.com/ItzOnlyAnimal/theme-stuff/main/fix_darkly.user.css
 @preprocessor   stylus
 ==/UserStyle== */
 @-moz-document url-prefix("https://stat.ink/") {
