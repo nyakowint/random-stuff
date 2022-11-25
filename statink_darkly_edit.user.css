@@ -45,12 +45,11 @@
         border-color: #9b2899;
     }
 
-    .root-1-2-17,
-    .root-1-2-7 {
+    [class*="root-1-"] {
         background-color: #242424;
     }
 
-    .content-1-2-26 {
+    [class*="content-1-"] {
         background-color: #242424;
         color: wheat;
     }
@@ -59,7 +58,7 @@
         color: wheat;
     }
     
-    .ellipsis-1-2-17 {
+    [class*="ellipsis"] {
         white-space: pre-wrap;
     }
 }
