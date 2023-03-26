@@ -1,0 +1,52 @@
+/* ==UserStyle==
+@name           Seed Checker Edits
+@namespace     guhh
+@version        1.0.0
+@description    make lean's website a little more bearable, may update this later
+@author         Me
+==/UserStyle== */
+@-moz-document domain("leanny.github.io") {
+    [class^="Profile_BynameList__"] {
+        justify-content: center;
+    }
+
+    [class^="Byname_ByamlFullEntry__"]:not([class^="Profile_CatalogueElem__"] [class^="Byname_ByamlFullEntry__"]) {
+        display: flex;
+        flex-wrap: wrap;
+        width: 600px;
+        justify-content: space-evenly;
+        background-color: #11021f;
+        margin: 0.8em;
+    }
+
+    [class^=".Input_Checkbox__"] {
+        width: 32px;
+        height: 32px;
+    }
+
+    [class^="Input_Input__"] {
+        text-align: center;
+    }
+
+    [class^="Input_Wrapper__"]:not([class^="NamePlateBg_NameplateFullEntry__"] [class^="Input_Wrapper__"]) {
+        display: flex;
+        font-size: .875rem;
+        line-height: 1.5;
+        width: 60%;
+        margin-bottom: 1rem!important;
+        align-content: stretch;
+        order: 1;
+        padding: 0.5em;
+    }
+
+    [class^="Byname_BynameEntry__"] {
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    [class^="Input_Title__"] {
+        justify-content: center;
+        width: 30% !important;
+    }
+}
