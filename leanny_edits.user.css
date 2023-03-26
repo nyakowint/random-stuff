@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Seed Checker Edits
 @namespace     guhh
-@version        1.0.0
+@version        1.0.1
 @description    make lean's website a little more bearable, may update this later
 @author         Me
 ==/UserStyle== */
@@ -10,13 +10,14 @@
         justify-content: center;
     }
 
+    /* Title cards not inside of catalog*/
     [class^="Byname_ByamlFullEntry__"]:not([class^="Profile_CatalogueElem__"] [class^="Byname_ByamlFullEntry__"]) {
         display: flex;
-        flex-wrap: wrap;
-        width: 600px;
+        width: 24em;
         justify-content: space-evenly;
         background-color: #11021f;
         margin: 0.8em;
+        column-gap: 2px;
     }
 
     [class^=".Input_Checkbox__"] {
@@ -28,21 +29,25 @@
         text-align: center;
     }
 
+
+
+
+    /* owned checkboxes not inside of banners */
     [class^="Input_Wrapper__"]:not([class^="NamePlateBg_NameplateFullEntry__"] [class^="Input_Wrapper__"]) {
         display: flex;
         font-size: .875rem;
         line-height: 1.5;
         width: 60%;
         margin-bottom: 1rem!important;
-        align-content: stretch;
         order: 1;
         padding: 0.5em;
     }
 
+    /* title text boxes */
     [class^="Byname_BynameEntry__"] {
         text-align: center;
         justify-content: center;
-        width: 100%;
+        transform: translateY(8px);
     }
 
     [class^="Input_Title__"] {
