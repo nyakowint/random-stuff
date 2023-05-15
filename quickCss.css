@@ -1,11 +1,32 @@
 /* I wont be keeping this version up to date with my local one, this is just here for reference */ 
-@import url("https://snare-hawk.github.io/snare-CSS/profile-panel-thingy.css");
-/* @import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha-pink.theme.css");*/
 
+@import url("https://snare-hawk.github.io/snare-CSS/profile-panel-thingy.css"); 
+@import url("https://martinz64.github.io/remove-nitro/better_sessions.css");
+@import url("https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/source.min.css");
+/* @import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha-pink.theme.css");*/
 
 /* Show full about me i think */
 [class*="lineClamp2Plus-"] { 
   -webkit-line-clamp: 10000000!important;
+}
+
+/* Hide "AKA" nicknames cause user popout bloat */
+[class*=container-]:has([class*=akaBadge-]) {
+    display: none;
+}
+
+/* Hover timestamp */
+/* [class*=timestampInline-] {
+  opacity: 0;
+  transition: 0.2s opacity ease-in-out;
+}
+
+[class^=message-]:hover [class*=timestampInline-] {
+  opacity: 1;
+} */
+
+a[href='/family-center'] {
+  display: none;
 }
 
 /* make pip bigger */
@@ -13,6 +34,19 @@
     width: 420px;
     height: 236px;
 } */
+
+
+/* .emoji[alt="🧌"] {
+  content: url("https://cdn.discordapp.com/emojis/1024751352028602449.png");
+} */
+
+.emoji[alt="🥹"] {
+  content: url("https://vendicated.github.io/random-files/face_holding_back_tears.svg");
+}
+
+.emoji[alt="🥺"] {
+  content: url("https://vendicated.github.io/random-files/pleading_face.svg");
+}
 
 [class^="channel-"] > div > [href="/store"], /* Nitro Button above DM List */
 [class^="channelTextArea"] [class^="buttons-"] > button, /* Hide Gift Button */
@@ -53,4 +87,3 @@
   border: 0px solid;
   border-color: var(--profile-role-pill-border-color);
 }
-
