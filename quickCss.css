@@ -3,6 +3,8 @@
 @import url("https://snare-hawk.github.io/snare-CSS/profile-panel-thingy.css"); 
 @import url("https://martinz64.github.io/remove-nitro/better_sessions.css");
 @import url("https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/source.min.css");
+@import url("https://minidiscordthemes.github.io/Snippets/HideAKA/HideAKA-badge.css");
+
 /* @import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha-pink.theme.css");*/
 
 /* Show full about me i think */
@@ -10,10 +12,19 @@
   -webkit-line-clamp: 10000000!important;
 }
 
-/* Hide "AKA" nicknames cause user popout bloat */
-[class*=container-]:has([class*=akaBadge-]) {
-    display: none;
+:is([class*=userTagWithNickname], [class*=nameTagSmall]) span:only-child:before {
+    content: '^';
 }
+
+:has(.container-mAkQVR):is(.container-3g15px,.usernameSection-3FppkT) :is(.userTagNoNickname-h9Bh88,.nickname-3P1RuO,.nameTag-H6kSJ0):first-child {
+  background: transparent;
+}
+
+
+/* Hide "AKA" nicknames cause user popout bloat */
+/* [class*=container-]:has([class*=akaBadge-]) {
+    display: none;
+} breaks dms lol */
 
 /* Hover timestamp */
 /* [class*=timestampInline-] {
