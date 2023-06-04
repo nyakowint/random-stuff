@@ -1,0 +1,48 @@
+@import url("https://mintlily.github.io/Dark-Vanilla/VRCX/DarkVanilla.css");
+
+.el-table {
+	border-radius: 5px;
+}
+
+.el-tabs__nav.is-top.is-stretch[role='tablist'] {
+	border: none;
+	border-radius: 6px;
+}
+.is-active[role='tab'] {
+	background-color: #1f192280;
+}
+
+.el-tabs--card>.el-tabs__header .el-tabs__item {
+	border-left: none;
+}
+
+.el-tabs--card>.el-tabs__header .el-tabs__item {
+    transition: border-bottom-color 0.3s ease-in-out;
+    border-bottom: 2px solid transparent;
+}
+
+.el-tabs--card>.el-tabs__header .el-tabs__item.is-active {
+	transition: width 0.3s;
+}
+
+
+/* tweaks to the above theme */
+:root {
+	--theme-text-muted: #41344d;
+	--theme-text-muted-og: #906D92;
+	--bg-color: var(--bg-color);
+}
+
+.el-tabs__item:hover { 
+	color: var(--theme-text-muted-og) !important; 
+}
+
+.noty_theme__mint.noty_type__error { 
+	background-color: var(--bg-color) !important;
+ }
+
+.noty_theme__mint.noty_type__success {
+	background: var(--bg-color);
+}
+
+/* end tweaks */
