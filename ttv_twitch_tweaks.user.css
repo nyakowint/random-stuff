@@ -1,13 +1,13 @@
 /* ==UserStyle==
 @name           Twitch tweaks
 @namespace      github.com/openstyles/stylus
-@version        1.0.0
+@version        1.1.0
 @description    your balls will explode guaranteed
 @author         Me
 ==/UserStyle== */
 
 @-moz-document domain("twitch.tv") {
-    .ffz-tooltip {
-        border-radius: 10px
+    .disclosure-card {
+        display: none;
     }
 }
