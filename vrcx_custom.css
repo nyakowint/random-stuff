@@ -1,8 +1,19 @@
-@import url("https://mintlily.github.io/Dark-Vanilla/VRCX/DarkVanilla.css");
 
+/* styling vrcx sucks ASS nearly every classname is fucking recycled */
 .el-table {
 	border-radius: 5px;
 }
+
+
+/* Hide username in places */
+span.el-popover__reference {
+	display: none;
+}
+
+span+.x-friend-list .x-friend-item div.avatar+div.detail span.name+span.extra {
+	display: none;
+}
+  
 
 .el-tabs__nav.is-top.is-stretch[role='tablist'] {
 	border: none;
@@ -26,8 +37,24 @@
 	transition: width 0.3s;
 }
 
+/* do the funny fade or something i dont remember */
+/* Hide .el-tabs__item elements by default, except for the active one */
+#aside .el-tabs__item:not(.is-active) {
+	display: none;
+	opacity: 0;
+	transform: translateY(10px);
+	transition: opacity 0.3s, transform 0.3s;
+}
 
-/* tweaks to the above theme */
+/* Show the .el-tabs__item elements when the parent of the active one is hovered */
+#aside .el-tabs__nav:hover .el-tabs__item {
+	display: block;
+	opacity: 1;
+	transform: translateY(0);
+}
+
+
+/* tweaks to dark vanilla */
 :root {
 	--theme-text-muted: #41344d;
 	--theme-text-muted-og: #906D92;
