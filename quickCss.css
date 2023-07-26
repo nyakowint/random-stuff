@@ -1,24 +1,69 @@
-/* I wont be keeping this version up to date with my local one, this is just here for reference */ 
+/* I only update this one periodically, its just here for reference */ 
 
 @import url("https://snare-hawk.github.io/snare-CSS/profile-panel-thingy.css"); 
 @import url("https://martinz64.github.io/remove-nitro/better_sessions.css");
 @import url("https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/source.min.css");
 @import url("https://minidiscordthemes.github.io/Snippets/HideAKA/HideAKA-badge.css");
+@import url("https://raw.githubusercontent.com/ItzOnlyAnimal/theme-stuff/main/vencord_sc_icons.css");
+@import url(https://seele1306.github.io/OnekoDM.css);
 
-/* @import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha-pink.theme.css");*/
+/* svg > div > foreignObject {
+  display: none;
+} */
+
+/* fix for oneko making everything border radius */
+[class*=listItem-]>div>div>svg {
+    border-radius: unset !important;
+}
+
+div[class*="text-xs-normal-"][class*="subtext-"] p span[style*="font-family: var(--font-code)"] {
+  font-family: var(--font-primary) !important;
+}
+
+[class*=accountProfilePopoutWrapper-] > div > div > [class*=profileBadges-],
+[class*=accountProfilePopoutWrapper-] > div > div > [class*=userPopoutOverlayBackground-] > [class*=divider-],
+[class*=accountProfilePopoutWrapper-] > div > div > [class*=userPopoutOverlayBackground-] > [class*=section-],
+[class*=accountProfilePopoutWrapper-] > div > div > [class*=userPopoutOverlayBackground-] > [class*=scroller-]
+{
+  display: none;
+}
 
 /* Show full about me i think */
 [class*="lineClamp2Plus-"] { 
-  -webkit-line-clamp: 10000000!important;
+  -webkit-line-clamp: unset!important;
 }
 
-:is([class*=userTagWithNickname], [class*=nameTagSmall]) span:only-child:before {
-    content: '^';
+[class*="rowGuildName-"] [class^="flowerStarContainer-"] {
+  display: none;
+}
+
+.usernameInnerRow-1-STdK::after {
+  content: "#0001";
+  color: var(--status-offline);
 }
 
 :has(.container-mAkQVR):is(.container-3g15px,.usernameSection-3FppkT) :is(.userTagNoNickname-h9Bh88,.nickname-3P1RuO,.nameTag-H6kSJ0):first-child {
   background: transparent;
 }
+
+/* Spotimbed */
+
+.vc-spotimbed-embed {
+  border-radius: 1em;
+}
+
+.vc-spotimbed-art {
+  border-radius: 12px;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.vc-spotimbed-controls {
+  background-color: #0000002c;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
 
 
 /* Hide "AKA" nicknames cause user popout bloat */
@@ -36,9 +81,6 @@
   opacity: 1;
 } */
 
-a[href='/family-center'] {
-  display: none;
-}
 
 /* make pip bigger */
 /* :root [class^="pipModeShort-"]{
@@ -97,4 +139,35 @@ a[href='/family-center'] {
   background-color: var(--profile-role-pill-background-color);
   border: 0px solid;
   border-color: var(--profile-role-pill-border-color);
+}
+
+/* icons on Listening status */
+
+.activityUserPopoutV2-3eKqzY:has([class^=timeBarUserPopoutV2-]) .contentImagesUserPopoutV2-2Mcg9w {
+  margin-left: 22px;
+}
+
+.activityUserPopoutV2-3eKqzY:has([class^=timeBarUserPopoutV2-]) .contentImagesUserPopoutV2-2Mcg9w > div:first-child::before,
+.activityUserPopoutV2-3eKqzY:has([class^=timeBarUserPopoutV2-]) .contentImagesUserPopoutV2-2Mcg9w > div:nth-child(2)::before,
+.activityUserPopoutV2-3eKqzY:has([class^=timeBarUserPopoutV2-]) .contentImagesUserPopoutV2-2Mcg9w > div:nth-child(3)::before {
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  padding: 7px;
+  margin-left: -17px;
+  margin-top: 2px;
+  content: '';
+  background-color: var(--header-primary);
+  /* Spotify wave thingy fix */
+  /*background-color: hsla(var(--spotify-vencord-text)/1);*/
+  position: absolute;
+}
+
+.activityUserPopoutV2-3eKqzY:has([class^=timeBarUserPopoutV2-]) .contentImagesUserPopoutV2-2Mcg9w > div:first-child::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-music-4'%3E%3Cpath d='M9 18V5l12-2v13'%3E%3C/path%3E%3Cpath d='m9 9 12-2'%3E%3C/path%3E%3Ccircle cx='6' cy='18' r='3'%3E%3C/circle%3E%3Ccircle cx='18' cy='16' r='3'%3E%3C/circle%3E%3C/svg%3E");
+}
+.activityUserPopoutV2-3eKqzY:has([class^=timeBarUserPopoutV2-]) .contentImagesUserPopoutV2-2Mcg9w > div:nth-child(2)::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-mic'%3E%3Cpath d='M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z'%3E%3C/path%3E%3Cpath d='M19 10v2a7 7 0 0 1-14 0v-2'%3E%3C/path%3E%3Cline x1='12' x2='12' y1='19' y2='22'%3E%3C/line%3E%3C/svg%3E");
+}
+.activityUserPopoutV2-3eKqzY:has([class^=timeBarUserPopoutV2-]) .contentImagesUserPopoutV2-2Mcg9w > div:nth-child(3)::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-disc-2'%3E%3Ccircle cx='12' cy='12' r='4'%3E%3C/circle%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='12' x2='12' y2='12.01'%3E%3C/line%3E%3C/svg%3E");
 }
