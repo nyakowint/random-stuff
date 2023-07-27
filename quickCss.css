@@ -11,6 +11,11 @@
   display: none;
 } */
 
+/* hide dziurwa teaching ppl how to use unreleased feature (discord moment) */
+[class^=listItem-]:has([class^=lowerBadge]):not(:has(img)) {
+    display: none;
+}
+
 /* fix for oneko making everything border radius */
 [class*=listItem-]>div>div>svg {
     border-radius: unset !important;
