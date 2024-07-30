@@ -1,27 +1,181 @@
 /* I only update this one periodically, its just here for reference */ 
 
 @import url("https://snare-hawk.github.io/snare-CSS/profile-panel-thingy.css"); 
-@import url("https://martinz64.github.io/remove-nitro/better_sessions.css");
-@import url("https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/source.min.css");
-@import url("https://minidiscordthemes.github.io/Snippets/HideAKA/HideAKA-badge.css");
-@import url("https://raw.githubusercontent.com/ItzOnlyAnimal/theme-stuff/main/vencord_sc_icons.css");
-@import url(https://seele1306.github.io/OnekoDM.css);
+/* @import url("https://martinz64.github.io/remove-nitro/better_sessions.css"); */
+@import url(https://overimagine1.github.io/old-discord-font/source.css);
+@import url("https://raw.githubusercontent.com/nyakowint/theme-stuff/main/vencord_sc_icons.css");
 
-/* svg > div > foreignObject {
+
+[class^=headerContainer_] {
+  justify-content: left;
+}
+
+.vc-settings-quickActions-card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+[aria-label="📩-modmail threads"] {
   display: none;
-} */
+}
 
-/* hide dziurwa teaching ppl how to use unreleased feature (discord moment) */
-[class^=listItem-]:has([class^=lowerBadge]):not(:has(img)) {
+/* Hide Stream Preview when hidden */
+[class^="pictureInPicture"]:has([class^="content_"][class*="streamHidden_"]) {
     display: none;
 }
 
-/* fix for oneko making everything border radius */
-[class*=listItem-]>div>div>svg {
-    border-radius: unset !important;
+/* visual refresh "fixes" */
+
+/* re-edging the corner padding to match pre-refresh */
+.visual-refresh [class^=appAsidePanelWrapper] {
+    padding: 1px;
 }
 
-div[class*="text-xs-normal-"][class*="subtext-"] p span[style*="font-family: var(--font-code)"] {
+/* Make profile & derivatives stop hogging the entire bottom left corner*/
+.visual-refresh [class^=panels_] {
+  position: unset;
+  width: unset;
+}
+
+/* Fix the dead space padding on the server and channel list */
+.visual-refresh [class^=wrapper_], .visual-refresh .container_ee69e0 {
+  padding-bottom: unset;
+}
+
+/* preference, match spotifycontrols to panel tint */
+.theme-dark #vc-spotify-player {
+ background: unset; 
+}
+
+/* end visual refresh */
+
+
+
+/* guilds/clans */
+[data-dnd-name="Pending Applications"] {
+  display: none;
+}
+
+/* Hide voice channels show all btn */
+[class*="voiceChannelsButton"] {
+  display: none;
+}
+
+[class*="iconNoChannelInfo"][aria-label*="Create Invite"] {
+  display: none;
+}
+
+/* Fix overflow profile bug (i think) */
+[class*="container_"][class*="elevationBorderHigh_"] {
+  border-radius: 10px;
+}
+
+/* Change order of spotify listen along */
+[class*="listeningAlong_"] {
+  order: unset;
+}
+
+/* Another dumb border radius fix */
+[class*="medium_"] {
+  border-radius: var(--radius-xs);
+}
+
+/* Make profile popouts round again */
+[class*=userPopoutOuter_] {
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+[class*=botText] {
+    font-weight: 600 !important;
+    font-size: 1em !important;
+    vertical-align: top !important;
+    line-height: .9375rem;
+}
+
+.vc-spotify-player {
+  order: -11;
+}
+
+/* moves hang status to the left */
+[class^="iconGroup"]:has([class*="hangStatusIcon"]){
+  position: absolute;
+  right: 196px;
+}
+
+/* moves activities to the left */
+[aria-label="Add a status"], [aria-label*="Playing"] {
+  position: absolute;
+  right: 198px;
+}
+
+/* hover thing */
+.wrapper_d8bfb3 .link_d8bfb3 /* channels */,
+.container_e9f61e /* members */,
+.channel_c91bad /* dms */,
+.side_a0 .item_a0 /* settings */ {
+    transition: margin-left 0.2s ease;
+}
+.wrapper_d8bfb3:hover .link_d8bfb3,
+.side_a0 .item_a0:hover {
+    margin-left: 10px;
+}
+.container_e9f61e:hover,
+.channel_c91bad:hover {
+    margin-left: 18px;
+}
+/* end */
+
+
+[style="width: 480px;"] [class*="userProfileModalOuter_"] { width: 24rem !important }
+
+/* I DONT WANT TO INVITE RANDOM PEOPLE TO SERVERS FROM CONTEXT */
+#user-context-invite-to-server, [id=user-profile-overflow-menu-invite-to-server] {
+  display: none;
+}
+
+/* [class*="activity__"]>[class*="activityText__"] {
+  display: none;
+} */
+
+[class=bar_]:has([class^=voiceChannelsIcon_]) {
+    display: none;
+}
+
+[class*=userPopoutOverlayBackground] {
+  max-height: 60vh;
+}
+
+/* twitter */
+img[src*="/assets/4643b9da67226d176c1c988a94b1f1ec.svg"] {
+   content:url("https://discord.com/assets/85cf2b49d2a185c98ec8e383ad5a05d6.svg");
+}
+
+img[src*="289556910426816513"] {
+    content: url("https://cdn.discordapp.com/avatars/527128154448461856/dbe790cfc5958f83c767ee484400b1f2.webp?size=1024&width=0&height=256");
+}
+
+/* no profile effects */
+[class^='profileEffects_'] {
+    display: none;
+}
+
+/* [class*="listItem-"] [class*="listItemWrapper-"] [class*="wrapper-"] svg foreignObject div[class*="circleIconButton-"][role="treeitem"] {
+  display: none;
+} */
+
+/* make links inside link warning selectable */
+[class*="linkCalloutContainer_"] {
+  user-select: text;
+}
+
+/* fix for oneko making everything border radius
+[class*=listItem_]>div>div>svg {
+    border-radius: unset !important;
+} */
+
+/* revert call timer's font change (i dont like it) */
+div[class*="text-xs/normal_"][class*="subtext_"] p span[style*="font-family: var(--font-code);"] {
   font-family: var(--font-primary) !important;
 }
 
@@ -33,21 +187,16 @@ div[class*="text-xs-normal-"][class*="subtext-"] p span[style*="font-family: var
   display: none;
 }
 
-/* Show full about me i think */
-[class*="lineClamp2Plus-"] { 
-  -webkit-line-clamp: unset!important;
+/* show full about me */
+[style="-webkit-line-clamp: 6;"] {
+  -webkit-line-clamp: 10000000 !important;
 }
 
-[class*="rowGuildName-"] [class^="flowerStarContainer-"] {
+[class*="rowGuildName_"] [class^="flowerStarContainer_"] {
   display: none;
 }
 
-.usernameInnerRow-1-STdK::after {
-  content: "#0001";
-  color: var(--status-offline);
-}
-
-:has(.container-mAkQVR):is(.container-3g15px,.usernameSection-3FppkT) :is(.userTagNoNickname-h9Bh88,.nickname-3P1RuO,.nameTag-H6kSJ0):first-child {
+:has(.container-mAkQVR):is(.container-3g15px,.usernameSection_d2b491) :is(.userTagNoNickname_c9ccf6,.nickname_c9ccf6,.nameTag_be84f0):first-child {
   background: transparent;
 }
 
@@ -70,12 +219,6 @@ div[class*="text-xs-normal-"][class*="subtext-"] p span[style*="font-family: var
 }
 
 
-
-/* Hide "AKA" nicknames cause user popout bloat */
-/* [class*=container-]:has([class*=akaBadge-]) {
-    display: none;
-} breaks dms lol */
-
 /* Hover timestamp */
 /* [class*=timestampInline-] {
   opacity: 0;
@@ -88,15 +231,10 @@ div[class*="text-xs-normal-"][class*="subtext-"] p span[style*="font-family: var
 
 
 /* make pip bigger */
-/* :root [class^="pipModeShort-"]{
+:root [class^="pipModeShort_"]{
     width: 420px;
     height: 236px;
-} */
-
-
-/* .emoji[alt="🧌"] {
-  content: url("https://cdn.discordapp.com/emojis/1024751352028602449.png");
-} */
+} 
 
 .emoji[alt="🥹"] {
   content: url("https://vendicated.github.io/random-files/face_holding_back_tears.svg");
@@ -106,41 +244,33 @@ div[class*="text-xs-normal-"][class*="subtext-"] p span[style*="font-family: var
   content: url("https://vendicated.github.io/random-files/pleading_face.svg");
 }
 
-[class^="channel-"] > div > [href="/store"], /* Nitro Button above DM List */
-[class^="channelTextArea"] [class^="buttons-"] > button, /* Hide Gift Button */
-[class^="upsellVisible-"], /* Hide Banner Nitro Upsell Header */
+[class^="channel_"] > div > [href="/store"], /* Nitro Button above DM List */
+[class^="channelTextArea"] [class^="buttons_"] > button, /* Hide Gift Button */
+button[aria-label="Send a gift"], 
+[class^="upsellVisible_"], /* Hide Banner Nitro Upsell Header */
 [class^="premiumIconWrapper"], /* Hide Nitro Icon on Banners */
-[class^="characterCount-"] [class*="upsell-"], /* "Send longer Messages with Discord Nitro!" */
-[class^="emojiSection-"] [class*="shinyButton-"] /* "Get Nitro" button in Emoji/Sticker modal" */
+[class^="characterCount_"] [class*="upsell_"], /* "Send longer Messages with Discord Nitro!" */
+[class^="emojiSection_"] [class*="shinyButton_"] /* "Get Nitro" button in Emoji/Sticker modal" */
 {
     display: none !important;
 }
 
-[class^="menu-"], [class^="popout-"] { /* right click menu transparency */
+[class^="menu_"], [class^="popout_"] { /* right click menu transparency */
     opacity: 95%;
 }
-/* Hide blocked messages */
-/* [class*="blockedSystemMessage-"]>div {
-  display: none;
-} */
 
 /* Hide muted DMs and GCs */
-[class*="channel-"]>div[class*="muted-"] {
+[class*="channel_"]>[class*="muted_"] {
   display: none;
 } 
 
 /* Hide "start a thread" bullshit */
-[class^="threadSuggestionBar"] {
+[class*="threadSuggestionBar_"] {
   display: none;
 }
 
-.imageAccessory-2yA7Kb {
-    left: initial;
-    right: 6px;
-}
-
 /* remove ugly border on roles */
-[class*="rolePill-"] {
+[class*="rolePill_"] {
   background-color: var(--profile-role-pill-background-color);
   border: 0px solid;
   border-color: var(--profile-role-pill-border-color);
@@ -148,13 +278,13 @@ div[class*="text-xs-normal-"][class*="subtext-"] p span[style*="font-family: var
 
 /* icons on Listening status */
 
-.activityUserPopoutV2-3eKqzY:has([class^=timeBarUserPopoutV2-]) .contentImagesUserPopoutV2-2Mcg9w {
+[class^=activityUserPopoutV2_]:has([class^=timeBarUserPopoutV2_]) [class^=contentImagesUserPopoutV2_] {
   margin-left: 22px;
 }
 
-.activityUserPopoutV2-3eKqzY:has([class^=timeBarUserPopoutV2-]) .contentImagesUserPopoutV2-2Mcg9w > div:first-child::before,
-.activityUserPopoutV2-3eKqzY:has([class^=timeBarUserPopoutV2-]) .contentImagesUserPopoutV2-2Mcg9w > div:nth-child(2)::before,
-.activityUserPopoutV2-3eKqzY:has([class^=timeBarUserPopoutV2-]) .contentImagesUserPopoutV2-2Mcg9w > div:nth-child(3)::before {
+[class^=activityUserPopoutV2_]:has([class^=timeBarUserPopoutV2_]) [class^=contentImagesUserPopoutV2_] > div:first-child::before,
+[class^=activityUserPopoutV2_]:has([class^=timeBarUserPopoutV2_]) [class^=contentImagesUserPopoutV2_] > div:nth-child(2)::before,
+[class^=activityUserPopoutV2_]:has([class^=timeBarUserPopoutV2_]) [class^=contentImagesUserPopoutV2_] > div:nth-child(3)::before {
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: contain;
   padding: 7px;
@@ -167,12 +297,13 @@ div[class*="text-xs-normal-"][class*="subtext-"] p span[style*="font-family: var
   position: absolute;
 }
 
-.activityUserPopoutV2-3eKqzY:has([class^=timeBarUserPopoutV2-]) .contentImagesUserPopoutV2-2Mcg9w > div:first-child::before {
+
+[class^=activityUserPopoutV2_]:has([class^=timeBarUserPopoutV2_]) [class^=contentImagesUserPopoutV2_] > div:first-child::before {
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-music-4'%3E%3Cpath d='M9 18V5l12-2v13'%3E%3C/path%3E%3Cpath d='m9 9 12-2'%3E%3C/path%3E%3Ccircle cx='6' cy='18' r='3'%3E%3C/circle%3E%3Ccircle cx='18' cy='16' r='3'%3E%3C/circle%3E%3C/svg%3E");
 }
-.activityUserPopoutV2-3eKqzY:has([class^=timeBarUserPopoutV2-]) .contentImagesUserPopoutV2-2Mcg9w > div:nth-child(2)::before {
+[class^=activityUserPopoutV2_]:has([class^=timeBarUserPopoutV2_]) [class^=contentImagesUserPopoutV2_] > div:nth-child(2)::before {
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-mic'%3E%3Cpath d='M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z'%3E%3C/path%3E%3Cpath d='M19 10v2a7 7 0 0 1-14 0v-2'%3E%3C/path%3E%3Cline x1='12' x2='12' y1='19' y2='22'%3E%3C/line%3E%3C/svg%3E");
 }
-.activityUserPopoutV2-3eKqzY:has([class^=timeBarUserPopoutV2-]) .contentImagesUserPopoutV2-2Mcg9w > div:nth-child(3)::before {
+[class^=activityUserPopoutV2_]:has([class^=timeBarUserPopoutV2_]) [class^=contentImagesUserPopoutV2_] > div:nth-child(3)::before {
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-disc-2'%3E%3Ccircle cx='12' cy='12' r='4'%3E%3C/circle%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='12' x2='12' y2='12.01'%3E%3C/line%3E%3C/svg%3E");
 }
