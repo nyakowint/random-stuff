@@ -5,15 +5,17 @@
 }
 
 
+
+
 /* Hide username in places */
-span.el-popover__reference {
+span.el-popover__reference:not(.dialog-title) {
 	display: none;
 }
 
 span+.x-friend-list .x-friend-item div.avatar+div.detail span.name+span.extra {
 	display: none;
 }
-  
+
 
 .el-tabs__nav.is-top.is-stretch[role='tablist'] {
 	border: none;
@@ -55,22 +57,29 @@ span+.x-friend-list .x-friend-item div.avatar+div.detail span.name+span.extra {
 
 
 /* tweaks to dark vanilla */
-:root {
-	--theme-text-muted: #41344d;
-	--theme-text-muted-og: #906D92;
-	--bg-color: var(--bg-color);
+
+.el-tag--mini {
+	height: 20px;
+	padding: 0px 6px;
+}
+
+.el-dialog__wrapper[style^="z-index: "] {
+    backdrop-filter: blur(0.5px);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.noty_theme__mint {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.noty_theme__mint.noty_type__error {
+	border-bottom: 4px solid #ca5a65;
+	backdrop-filter: blur(1px);
+	background-color: rgba(0, 0, 0, 0.5);
 }
 
 .el-tabs__item:hover {
 	color: var(--theme-text-muted-og) !important;
 }
 
-.noty_theme__mint.noty_type__error {
-	background-color: var(--bg-color) !important;
-}
-
-.noty_theme__mint.noty_type__success {
-	background: var(--bg-color);
-}
-
-/* end tweaks */
+/* end */
