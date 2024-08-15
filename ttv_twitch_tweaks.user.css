@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitch tweaks
 @namespace      github.com/openstyles/stylus
-@version        1.2.0
+@version        1.2.2
 @description    your balls will explode guaranteed
 @author         Me
 ==/UserStyle== */
@@ -9,8 +9,17 @@
     .disclosure-card {
         display: none;
     }
+    
+    [class*="storiesLeftNavSection"] {
+        display: none !important;
+    }
+}
 
+@-moz-document domain("dashboard.twitch.tv") {
     .paid-pinned-chat-message-list {
-        display: none;
+        display: unset;
+    }
+    button[data-test-selector="update-button"] {
+        display: none
     }
 }
