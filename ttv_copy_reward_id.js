@@ -4,7 +4,7 @@
 // @version      0.2
 // @description  Extract data-reward-id attributes from Twitch channel points rewards
 // @match        https://dashboard.twitch.tv/*/viewer-rewards/channel-points/rewards
-// @downloadURL  https://raw.githubusercontent.com/nyakowint/random-stuff/main/twitch-copy-reward-id.js
+// @downloadURL  https://raw.githubusercontent.com/nyakowint/random-stuff/main/ttv_copy_reward_id.js
 // @grant        none
 // ==/UserScript==
 
