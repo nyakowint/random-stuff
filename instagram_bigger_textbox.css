@@ -1,0 +1,13 @@
+/* ==UserStyle==
+@name           fix stupid ig styles
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    fix stupid ig styles
+@author         nyakowint
+==/UserStyle== */
+@-moz-document domain("https://instagram.com/") {
+	textarea[id="pepBio"] {
+		width: 411px;
+		height: 194px;
+	}
+}
