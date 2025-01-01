@@ -1,0 +1,11 @@
+li [class*="Box__BoxComponent-sc-"] [class*="Areas__HeaderArea-sc-"] [class*="Areas__TrailingSlot-sc-"] button {
+  position: unset !important;
+}
+
+button {
+  border: 0 !important;
+}
+
+div[role=button][aria-labelledby*="listrow-title-spotify:track"] {
+  display: none;
+}
