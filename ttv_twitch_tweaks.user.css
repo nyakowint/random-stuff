@@ -1,25 +1,41 @@
 /* ==UserStyle==
 @name           Twitch tweaks
 @namespace      github.com/openstyles/stylus
-@version        1.2.2
+@version        1.2.3
 @description    your balls will explode guaranteed
-@author         Me
+@author         nnyan
 ==/UserStyle== */
 @-moz-document domain("twitch.tv") {
     .disclosure-card {
+		/* hide ccl disclosure on player */
         display: none;
     }
     
     [class*="storiesLeftNavSection"] {
+		/* hide stories on sidebar in case ffz doesnt */
         display: none !important;
+    }
+    
+    [aria-label="Turn On Shield Mode"] {
+        /* I ALMOST MISCLICK THIS SO MUCH*/
+        display: none;
+    }
+    
+    
+    #emote-picker__effect {
+        /* ffz emote effects */
+        display: none !important ;
     }
 }
 
 @-moz-document domain("dashboard.twitch.tv") {
-    .paid-pinned-chat-message-list {
-        display: unset;
-    }
     button[data-test-selector="update-button"] {
+		/* make sure i never click update prefix ever */
         display: none
     }
+	
+	div[class*="open-calling-faves"] div:nth-child(3) {
+		/* hide "suggested favorites" on collab panel */
+		display: none;
+	}
 }
