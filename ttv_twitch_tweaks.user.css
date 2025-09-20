@@ -6,6 +6,28 @@
 @author         nnyan
 ==/UserStyle== */
 @-moz-document domain("twitch.tv") {
+	/* also related to the weird light grey they use EVERYWHERE now */
+	:root {
+		--color-background-float: #18181b !important;
+		--color-hinted-grey-4: #18181b !important;
+	}
+
+	/* Change the sidebar to not ugly grey */
+	.tw-root--theme-dark .whispers-list-item__archive,
+	.tw-root--theme-dark .whispers-list-item .whispers-list-item__archive-button,
+	.tw-root--theme-dark .top-stats-tab:hover,
+	.tw-root--theme-dark .whispers-list-item--selected,
+	.tw-root--theme-dark .side-nav__overlay-wrapper,
+	.tw-root--theme-dark .thread-header__title-bar-container,
+	html .whispers-list-item__archive,
+	html .whispers-list-item .whispers-list-item__archive-button,
+	html .top-stats-tab:hover,
+	html .whispers-list-item--selectedZ,
+	html .side-nav__overlay-wrapper,
+	html .thread-header__title-bar-container {
+		background-color: var(--color-background-base) !important;
+	}
+
 	/*	.disclosure-card {*/
 	/* hide ccl disclosure on player */
 	/*		display: none;
@@ -28,6 +50,15 @@
 	#emote-picker__effect {
 		/* ffz emote effects */
 		display: none !important;
+	}
+
+	div[class^="ScInFeatureNotification"]:has(a[href*="/viewer-rewards/emotes"]) {
+		display: none !important;
+	}
+
+
+	div[style*="background-image: url(&quot;https://static-cdn.jtvnw.net/subs-image-assets/banner/subtember2025/banner-large.png&quot;);"] {
+		display: none;
 	}
 
 	/* "ruNnInG aD bLoCk? cOnSiDeR tUrBo" ttvlolpro is free */
