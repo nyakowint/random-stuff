@@ -4,83 +4,83 @@
 @version        1.2.6
 @description    your balls will explode guaranteed
 @author         nnyan
-@updateURL		https://raw.githubusercontent.com/nyakowint/random-stuff/refs/heads/main/ttv_twitch_tweaks.user.css
+@updateURL      https://raw.githubusercontent.com/nyakowint/random-stuff/refs/heads/main/ttv_twitch_tweaks.user.css
 ==/UserStyle== */
 @-moz-document domain("twitch.tv") {
-    /* also related to the weird light grey they use EVERYWHERE now */
-    :root {
-        --color-background-float: #18181b !important;
-        --color-hinted-grey-4: #18181b !important;
-    }
+	/* also related to the weird light grey they use EVERYWHERE now */
+	:root {
+		--color-background-float: #18181b !important;
+		--color-hinted-grey-4: #18181b !important;
+	}
 
-    /* I DONT CARE ABOUT AUDIBLE AMAZON */
-    footer[class="twilight-sticky-footer-root"] {
-        display: none !important;
-    }
+	/* I DONT CARE ABOUT AUDIBLE AMAZON */
+	footer[class="twilight-sticky-footer-root"] {
+		display: none !important;
+	}
 
-    /* Change the sidebar to not ugly grey */
-    .tw-root--theme-dark .whispers-list-item__archive,
-    .tw-root--theme-dark .whispers-list-item .whispers-list-item__archive-button,
-    .tw-root--theme-dark .top-stats-tab:hover,
-    .tw-root--theme-dark .whispers-list-item--selected,
-    .tw-root--theme-dark .side-nav__overlay-wrapper,
-    .tw-root--theme-dark .thread-header__title-bar-container,
-    html .whispers-list-item__archive,
-    html .whispers-list-item .whispers-list-item__archive-button,
-    html .top-stats-tab:hover,
-    html .whispers-list-item--selectedZ,
-    html .side-nav__overlay-wrapper,
-    html .thread-header__title-bar-container {
-        background-color: var(--color-background-base) !important;
-    }
+	/* Change the sidebar to not ugly grey */
+	.tw-root--theme-dark .whispers-list-item__archive,
+	.tw-root--theme-dark .whispers-list-item .whispers-list-item__archive-button,
+	.tw-root--theme-dark .top-stats-tab:hover,
+	.tw-root--theme-dark .whispers-list-item--selected,
+	.tw-root--theme-dark .side-nav__overlay-wrapper,
+	.tw-root--theme-dark .thread-header__title-bar-container,
+	html .whispers-list-item__archive,
+	html .whispers-list-item .whispers-list-item__archive-button,
+	html .top-stats-tab:hover,
+	html .whispers-list-item--selectedZ,
+	html .side-nav__overlay-wrapper,
+	html .thread-header__title-bar-container {
+		background-color: var(--color-background-base) !important;
+	}
 
-    /*	.disclosure-card {*/
-    /* hide ccl disclosure on player */
-    /*		display: none;
+	/*	.disclosure-card {*/
+	/* hide ccl disclosure on player */
+	/*		display: none;
 	}*/
-    [class*="storiesLeftNavSection"] {
-        /* hide stories on sidebar in case ffz doesnt */
-        display: none !important;
-    }
+	[class*="storiesLeftNavSection"] {
+		/* hide stories on sidebar in case ffz doesnt */
+		display: none !important;
+	}
 
-    [aria-label="Turn On Shield Mode"] {
-        /* I ALMOST MISCLICK THIS SO MUCH*/
-        display: none;
-    }
+	[aria-label="Turn On Shield Mode"] {
+		/* I ALMOST MISCLICK THIS SO MUCH*/
+		display: none;
+	}
 
-    .followed-side-nav-header__dropdown-trigger div svg {
-        display: none;
-    }
-
-
-    #emote-picker__effect {
-        /* ffz emote effects */
-        display: none !important;
-    }
-
-    div[class^="ScInFeatureNotification"]:has(a[href*="/viewer-rewards/emotes"]) {
-        display: none !important;
-    }
+	.followed-side-nav-header__dropdown-trigger div svg {
+		display: none;
+	}
 
 
-    div[style*="background-image: url(&quot;https://static-cdn.jtvnw.net/subs-image-assets/banner/subtember2025/banner-large.png&quot;);"] {
-        display: none;
-    }
+	#emote-picker__effect {
+		/* ffz emote effects */
+		display: none !important;
+	}
 
-    /* "ruNnInG aD bLoCk? cOnSiDeR tUrBo" ttvlolpro is free */
-    div[class*="player-overlay-background"][class*="player-overlay-background--darkness-3"] {
-        display: none !important;
-    }
+	div[class^="ScInFeatureNotification"]:has(a[href*="/viewer-rewards/emotes"]) {
+		display: none !important;
+	}
+
+
+	div[style*="background-image: url(&quot;https://static-cdn.jtvnw.net/subs-image-assets/banner/subtember2025/banner-large.png&quot;);"] {
+		display: none;
+	}
+
+	/* "ruNnInG aD bLoCk? cOnSiDeR tUrBo" ttvlolpro is free */
+	div[class*="player-overlay-background"][class*="player-overlay-background--darkness-3"] {
+		display: none !important;
+	}
 }
 
 @-moz-document domain("dashboard.twitch.tv") {
-    button[data-test-selector="update-button"] {
-        /* make sure i never click update prefix ever */
-        display: none
-    }
+	button[data-test-selector="update-button"] {
+		/* make sure i never click update prefix ever */
+		display: none
+	}
 
-    div[class*="open-calling-faves"] div:nth-child(3) {
-        /* hide "suggested favorites" on collab panel */
-        display: none;
-    }
+	div[class*="open-calling-faves"] div:nth-child(3) {
+		/* hide "suggested favorites" on collab panel */
+		display: none;
+	}
 }
